@@ -1,0 +1,57 @@
+{
+  "name": "intellibot",
+  "publisher": "Drumst0ck",
+  "displayName": "intellibot",
+  "description": "IntelliBot is the ultimate extension for developers looking to enhance their productivity. Powered by advanced GPT technology, IntelliBot becomes your coding copilot, providing intelligent suggestions, completing code snippets, and offering real-time assistance directly within Visual Studio Code.",
+  "repository": {
+    "url": "https://github.com/JoseSanchez54/intellibot"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "intellibot.token",
+        "title": "Intellibot: Set the OpenAI key"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "intellibot",
+        "properties": {
+          "intellibot.prompt": {
+            "type": "string",
+            "default": "",
+            "description": "This is the prompt to generate terminations."
+          }
+        }
+      }
+    ]
+  },
+  "version": "1.0.0",
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Machine Learning",
+    "AI"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "icon": "./logo.png",
+  "main": "./dist/extension.js",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "bun run build -- --watch",
+    "package": "vsce package --allow-star-activation"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "openai": "^4.52.0"
+  }
+}
